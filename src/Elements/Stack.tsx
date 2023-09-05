@@ -1,14 +1,14 @@
 const Stack = () => {
   return (
     <div
-      className="w-screen flex items-center justify-center flex-col gap-[30px] px-[120px] md:px-[30px]"
+      className="w-screen flex items-center justify-center flex-col gap-[15px] px-[120px] md:px-[30px]"
       id="stack"
     >
       <h1 className="reveal">Stack</h1>
-      <p className="reveal mb-14 text-xl text-center">
+      <p className="reveal mb-7 text-xl text-center">
         The technology stack on which the portfolio is built
       </p>
-      <div className="flex gap-[160px] flex-wrap items-center justify-center">
+      <div className="flex gap-[80px] flex-wrap items-center justify-center">
         <div className="revealT">
           <img src="./react.png" alt="react" className="object-cover" />
           <p>React</p>

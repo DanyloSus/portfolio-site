@@ -54,7 +54,7 @@ const App = () => {
           <Route
             path="/"
             element={
-              <div className="flex flex-col gap-[180px] mt-[180px]">
+              <div className="flex flex-col gap-[90px] mt-[90px]">
                 <Element />
                 <Element />
                 <Stack />
