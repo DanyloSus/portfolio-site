@@ -1,11 +1,11 @@
 const Stack = () => {
   return (
     <div
-      className="w-screen min-h-screen flex items-center justify-center flex-col gap-[60px] px-[120px] py-20"
+      className="w-screen flex items-center justify-center flex-col gap-[30px] px-[120px] md:px-[30px]"
       id="stack"
     >
       <h1 className="reveal">Stack</h1>
-      <p className="reveal">
+      <p className="reveal mb-14 text-xl text-center">
         The technology stack on which the portfolio is built
       </p>
       <div className="flex gap-[160px] flex-wrap items-center justify-center">

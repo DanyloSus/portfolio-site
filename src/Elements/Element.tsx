@@ -1,6 +1,6 @@
 const Element = () => {
   return (
-    <section className="h-screen w-screen flex items-center px-11 md:px-5">
+    <section className="h-full w-screen flex items-center px-11 md:px-5">
       <div className="">
         <img src="./react.png" alt="" className="revealI" />
         <div className="w-full h-full items-center justify-center flex reveal">
