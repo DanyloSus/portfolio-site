@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif;
 }
 
 section > div,
@@ -24,7 +25,7 @@ p {
 }
 
 svg {
-  @apply fill-white w-8 h-8 bg-black p-[5px] rounded-full cursor-pointer;
+  @apply fill-white w-8 h-8 bg-black p-[5px] rounded-lg cursor-pointer;
 }
 
 button {
@@ -71,6 +72,9 @@ section:nth-child(2n+1) > div img.active {
 }
 #stack > div > div img {
   @apply w-20 h-20;
+}
+#stack > div > div:hover p {
+  @apply decoration-white underline;
 }
 
 header {

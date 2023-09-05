@@ -4,5 +4,10 @@
     img {
       @apply w-20 h-20;
     }
+    &:hover {
+      p {
+        @apply decoration-white underline;
+      }
+    }
   }
 }
