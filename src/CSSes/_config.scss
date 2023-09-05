@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Times New Roman", Times, serif;
+}
+
+section > div,
+header,
+footer {
+  @apply bg-bg-elements;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-lg;
+}
+
+svg {
+  @apply fill-white w-8 h-8 bg-black p-[5px] rounded-full cursor-pointer;
+}

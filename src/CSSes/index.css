@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: "Times New Roman", Times, serif;
+}
+
+section > div,
+header,
+footer {
+  @apply bg-bg-elements;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-lg;
+}
+
+svg {
+  @apply fill-white w-8 h-8 bg-black p-[5px] rounded-full cursor-pointer;
+}
+
+section:nth-child(2n) > div {
+  @apply max-w-full w-full h-1/2 flex flex-row text-center justify-center gap-3 md:flex-col md:max-h-[83.3333%] md:h-full;
+}
+section:nth-child(2n) > div > div div {
+  @apply text-center justify-center;
+}
+section:nth-child(2n) > div > div div button {
+  @apply mx-auto;
+}
+section:nth-child(2n) > div img.active {
+  @apply h-full w-full object-cover md:h-[30%] md:object-cover md:max-w-full md:w-full;
+}
+section:nth-child(2n+1) > div {
+  @apply max-w-full flex w-full flex-row-reverse h-1/3 text-left gap-3 md:flex-col md:max-h-[66.6667%] md:h-full;
+}
+section:nth-child(2n+1) > div > div div {
+  @apply text-left justify-start;
+}
+section:nth-child(2n+1) > div > div div button {
+  @apply mx-0;
+}
+section:nth-child(2n+1) > div img.active {
+  @apply max-w-[60%] h-full object-cover md:h-[30%] md:object-cover md:max-w-full md:w-full;
+}
+
+#stack > div > div {
+  @apply flex flex-col items-center gap-4 cursor-pointer;
+}
+#stack > div > div img {
+  @apply w-20 h-20;
+}
+
+header {
+  animation: header 1.5s ease-in-out backwards;
+}
+
+@keyframes header {
+  0% {
+    position: relative;
+    left: -100%;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    left: 0%;
+    opacity: 1;
+  }
+}
+.reveal {
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.reveal:nth-child(2n) {
+  transform: translateX(150px);
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.reveal:nth-child(2n).active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.revealI {
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.revealI.active {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+@media screen and (min-width: 540px) {
+  .revealT {
+    transform: translateY(-150px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .revealT.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .revealT:nth-child(2n) {
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .revealT:nth-child(2n).active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 540px) {
+  .revealT {
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .revealT.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .revealT:nth-child(2n) {
+    transform: translateX(150px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .revealT:nth-child(2n).active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=index.css.map */
