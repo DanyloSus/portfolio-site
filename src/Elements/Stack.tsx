@@ -1,10 +1,10 @@
 const Stack = () => {
   return (
     <div
-      className="w-screen min-h-screen flex items-center justify-center flex-col gap-[120px] reveal px-[120px] py-20"
+      className="w-screen min-h-screen flex items-center justify-center flex-col gap-[120px] px-[120px] py-20"
       id="stack"
     >
-      <h1>Stack</h1>
+      <h1 className="reveal">Stack</h1>
       <div className="flex gap-[160px] flex-wrap items-center justify-center">
         <div className="revealT">
           <img src="./react.png" alt="react" className="object-cover" />
