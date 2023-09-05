@@ -6,7 +6,6 @@ import Header from "./Elements/Header";
 import Stack from "./Elements/Stack";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import FormElem from "./Elements/FormReg";
 import FormReg from "./Elements/FormReg";
 import FormLog from "./Elements/FormLog";
 
