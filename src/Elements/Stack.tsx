@@ -1,10 +1,13 @@
 const Stack = () => {
   return (
     <div
-      className="w-screen min-h-screen flex items-center justify-center flex-col gap-[120px] px-[120px] py-20"
+      className="w-screen min-h-screen flex items-center justify-center flex-col gap-[60px] px-[120px] py-20"
       id="stack"
     >
       <h1 className="reveal">Stack</h1>
+      <p className="reveal">
+        The technology stack on which the portfolio is built
+      </p>
       <div className="flex gap-[160px] flex-wrap items-center justify-center">
         <div className="revealT">
           <img src="./react.png" alt="react" className="object-cover" />
