@@ -35,14 +35,35 @@ header {
   }
 }
 
-.revealI {
-  transform-origin: top;
-  transform: scaleY(0);
-  opacity: 0;
-  transition: 1s all ease-in-out;
-  &.active {
-    transform: scaleY(1);
-    opacity: 1;
+@media screen and (max-width: 768px) {
+  .revealI {
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    &.active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .revealI {
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: 1s all ease-in-out;
+    &.active {
+      transform: scaleX(1);
+    }
+    &:nth-child(2n) {
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: 1s all ease-in-out;
+      &.active {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 

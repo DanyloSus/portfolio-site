@@ -51,6 +51,16 @@ section:nth-child(2n+1) > div > div div button {
 section:nth-child(2n+1) > div img.active {
   @apply max-w-[60%] h-full object-cover md:h-[30%] md:object-cover md:max-w-full md:w-full;
 }
+@media screen and (min-width: 768px) {
+  section:nth-child(2n+1) > div img.active.revealI {
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: 1s all ease-in-out;
+  }
+  section:nth-child(2n+1) > div img.active.revealI.active {
+    transform: scaleX(1);
+  }
+}
 
 #stack > div > div {
   @apply flex flex-col items-center gap-4 cursor-pointer;
@@ -94,17 +104,36 @@ header {
   opacity: 1;
 }
 
-.revealI {
-  transform-origin: top;
-  transform: scaleY(0);
-  opacity: 0;
-  transition: 1s all ease-in-out;
+@media screen and (max-width: 768px) {
+  .revealI {
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .revealI.active {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
-.revealI.active {
-  transform: scaleY(1);
-  opacity: 1;
+@media screen and (min-width: 768px) {
+  .revealI {
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: 1s all ease-in-out;
+  }
+  .revealI.active {
+    transform: scaleX(1);
+  }
+  .revealI:nth-child(2n) {
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: 1s all ease-in-out;
+  }
+  .revealI:nth-child(2n).active {
+    transform: scaleX(1);
+  }
 }
-
 @media screen and (min-width: 540px) {
   .revealT {
     transform: translateY(-150px);

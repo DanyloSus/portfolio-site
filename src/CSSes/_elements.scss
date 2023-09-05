@@ -21,6 +21,16 @@ section {
     }
     img.active {
       @apply max-w-[60%] h-full object-cover md:h-[30%] md:object-cover md:max-w-full md:w-full;
+      @media screen and (min-width: 768px) {
+        &.revealI {
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: 1s all ease-in-out;
+          &.active {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
   }
 }
