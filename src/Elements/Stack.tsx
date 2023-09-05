@@ -12,7 +12,7 @@ const Stack = () => {
         </div>
         <div className="revealT">
           <img src="./rest-api.png" alt="rest api" className="object-cover" />
-          <p>Rest API</p>
+          <p>Fast API</p>
         </div>
         <div
           className="revealT"
