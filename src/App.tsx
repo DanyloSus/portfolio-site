@@ -5,6 +5,11 @@ import Footer from "./Elements/Footer";
 import Header from "./Elements/Header";
 import Stack from "./Elements/Stack";
 
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import FormElem from "./Elements/FormReg";
+import FormReg from "./Elements/FormReg";
+import FormLog from "./Elements/FormLog";
+
 const App = () => {
   const reveal = () => {
     const reveals = document.querySelectorAll(".reveal");
@@ -43,13 +48,26 @@ const App = () => {
   }, []);
 
   return (
-    <main className="overflow-x-hidden bg-bg-body">
-      <Header />
-      <Element />
-      <Element />
-      <Stack />
-      <Footer />
-    </main>
+    <Router>
+      <main className="overflow-x-hidden bg-bg-body text-white">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <Element />
+                <Element />
+                <Stack />
+                <Footer />
+              </div>
+            }
+          />
+          <Route path="/login" element={<FormLog />} />
+          <Route path="/registration" element={<FormReg />} />
+        </Routes>
+      </main>
+    </Router>
   );
 };
 

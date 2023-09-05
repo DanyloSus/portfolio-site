@@ -77,7 +77,7 @@ section:nth-child(2n+1) > div img.active {
   @apply decoration-white underline;
 }
 
-header {
+header > div {
   animation: header 1.5s ease-in-out backwards;
 }
 
@@ -181,4 +181,7 @@ header {
     transform: translateX(0);
     opacity: 1;
   }
+}
+.MuiFormLabel-root {
+  color: white;
 }/*# sourceMappingURL=index.css.map */
