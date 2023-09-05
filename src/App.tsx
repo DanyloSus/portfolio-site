@@ -43,7 +43,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden bg-bg-body">
       <Header />
       <Element />
       <Element />
