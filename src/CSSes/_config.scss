@@ -27,3 +27,6 @@ p {
 svg {
   @apply fill-white w-8 h-8 bg-black p-[5px] rounded-full cursor-pointer;
 }
+button {
+  @apply w-[96px] h-7 bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold;
+}

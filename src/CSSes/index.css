@@ -27,13 +27,17 @@ svg {
   @apply fill-white w-8 h-8 bg-black p-[5px] rounded-full cursor-pointer;
 }
 
+button {
+  @apply w-[96px] h-7 bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold;
+}
+
 section:nth-child(2n) > div {
   @apply max-w-full w-full h-1/2 flex flex-row text-center justify-center gap-3 md:flex-col md:max-h-[83.3333%] md:h-full;
 }
 section:nth-child(2n) > div > div div {
   @apply text-center justify-center;
 }
-section:nth-child(2n) > div > div div button {
+section:nth-child(2n) > div button {
   @apply mx-auto;
 }
 section:nth-child(2n) > div img.active {
@@ -45,8 +49,8 @@ section:nth-child(2n+1) > div {
 section:nth-child(2n+1) > div > div div {
   @apply text-left justify-start;
 }
-section:nth-child(2n+1) > div > div div button {
-  @apply mx-0;
+section:nth-child(2n+1) > div button {
+  @apply hidden;
 }
 section:nth-child(2n+1) > div img.active {
   @apply max-w-[60%] h-full object-cover md:h-[30%] md:object-cover md:max-w-full md:w-full;
