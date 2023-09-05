@@ -1,9 +1,9 @@
 const Element = () => {
   return (
-    <section className="h-screen w-screen flex items-center px-11 md:px-5 reveal">
+    <section className="h-screen w-screen flex items-center px-11 md:px-5">
       <div className="">
         <img src="./react.png" alt="" className="revealI" />
-        <div className="w-full h-full items-center justify-center flex">
+        <div className="w-full h-full items-center justify-center flex reveal">
           <div className="flex flex-col gap-2">
             <h1>FIO</h1>
             <p>Short Description</p>
