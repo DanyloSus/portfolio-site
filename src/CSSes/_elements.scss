@@ -6,7 +6,7 @@ section {
     }
 
     img.active {
-      @apply h-full w-full object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
+      @apply h-full max-w-[40%] xl:w-full xl:max-w-full object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
     }
   }
   &:nth-child(2n) > div {
@@ -18,7 +18,7 @@ section {
       @apply hidden;
     }
     img.active {
-      @apply max-w-[60%] h-full object-cover md:h-[150px] md:object-cover md:max-w-full md:w-full;
+      @apply max-w-[30%] xl:max-w-[40%] w-full h-full object-cover md:h-[150px] md:object-cover md:max-w-full md:w-full;
       @media screen and (min-width: 768px) {
         &.revealI {
           transform-origin: right;

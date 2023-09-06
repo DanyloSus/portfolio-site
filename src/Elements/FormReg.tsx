@@ -159,7 +159,7 @@ const FormReg = () => {
               type="password"
             />
             <Button
-              className="go-button text-white rounded-xl border-2 border-[#5c5c5c]"
+              className="go-button text-white rounded-xl border-2 border-[#5c5c5c] text-xl"
               type="submit"
             >
               Submit
