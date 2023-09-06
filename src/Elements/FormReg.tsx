@@ -60,6 +60,9 @@ const FormReg = () => {
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "white",
     },
+    "& MuiInputBase-input": {
+      color: "white",
+    },
   };
 
   return (
@@ -76,7 +79,7 @@ const FormReg = () => {
               required
               sx={textfieldStyling}
               type="text"
-              className="w-full bg-[#aaaaaa] border border-[#555658] shadow-xl text-white font-bold"
+              className="w-full bg-[#5c5c5c] border border-[#555658] shadow-xl text-white font-bold"
             />
             <TextField
               label="Email"

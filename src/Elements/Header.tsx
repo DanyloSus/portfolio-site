@@ -10,10 +10,6 @@ const Header = () => {
           </h2>
         </Link>
         <div>
-          <Link to={"/login"} className="hover:underline decoration-white">
-            Login
-          </Link>
-          /
           <Link
             to={"/registration"}
             className="hover:underline decoration-white"
