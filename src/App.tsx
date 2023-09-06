@@ -68,7 +68,10 @@ const App = () => {
             path="/"
             element={
               <div className="flex flex-col gap-[90px] mt-[90px]">
-                <Element />
+                <Element fio="Stramousov Viktor"
+                  desc="Python Developer"
+                  lin=""
+                  git="https://github.com/Strong-Finger-sudo" />
                 <Element
                   fio="Danylo Sushko"
                   desc="Front-End Developer"
