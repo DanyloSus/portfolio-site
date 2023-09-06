@@ -11,7 +11,7 @@
 section > div,
 header,
 footer {
-  @apply bg-bg-elements;
+  @apply bg-bg-elements overflow-x-hidden;
 }
 
 h1 {
@@ -30,6 +30,21 @@ svg {
   @apply fill-white w-8 h-8 bg-black p-[5px] rounded-lg cursor-pointer;
 }
 
-button {
-  @apply w-[96px] h-7 bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold;
+button,
+.go-button {
+  @apply w-[200px] h-14 md:h-10 bg-transparent hover:text-white transition-all border border-[#555658] font-bold rounded-xl relative px-5 pb-2 pt-2;
+  background-color: transparent;
+  border: 2px solid #5c5c5c;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px #5c5c5c inset;
+  }
 }

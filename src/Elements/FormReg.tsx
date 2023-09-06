@@ -1,31 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { FormControl } from "@mui/material";
 
 const FormReg = () => {
+  const [data, setData] =
+    useState<{ email: string; password: string; username: string }[]>();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [usernameTextError, setUsernameTextError] = useState("");
+  const [emailTextError, setEmailTextError] = useState("");
+  const [passwordTextError, setPasswordTextError] = useState("");
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
     setEmailError(false);
     setPasswordError(false);
+    setUsernameError(false);
+
+    const checkEmail = (email: string) => {
+      if (data) {
+        return data.findIndex((user) => user.email === email) > -1;
+      }
+    };
+    const checkUsername = (username: string) => {
+      if (data) {
+        return data.findIndex((user) => user.username === username) > -1;
+      }
+    };
 
     if (email == "") {
       setEmailError(true);
+      setEmailTextError("Enter email");
+    } else if (checkEmail(email)) {
+      setEmailError(true);
+      setEmailTextError("Email is already registed");
     }
     if (password == "") {
       setPasswordError(true);
+      setPasswordTextError("Enter password");
     }
     if (username == "") {
       setUsernameError(true);
+      setUsernameTextError("Enter username");
+    } else if (checkUsername(username)) {
+      setUsernameError(true);
+      setUsernameTextError("Username is already registered");
     }
 
     if (email && password && username) {
@@ -49,7 +76,20 @@ const FormReg = () => {
     }
   };
 
+  useEffect(() => {
+    getRegData();
+  }, []);
+
+  const getRegData = async () => {
+    fetch("https://wyn70xjevv.loclx.io/auth/get_users")
+      .then((resp) => resp.json())
+      .then((data) => setData(data));
+  };
+
   const textfieldStyling = {
+    "&": {
+      borderColor: "white",
+    },
     "& label": {
       color: "white",
       "&.Mui-focused": {
@@ -59,9 +99,23 @@ const FormReg = () => {
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "white",
-    },
-    "& MuiInputBase-input": {
+      borderRadius: "12px",
       color: "white",
+    },
+    "& fieldset": {
+      borderRadius: "12px",
+      borderColor: "white",
+    },
+    "& > div > input": {
+      color: "white",
+      fill: "white",
+      background: "#5c5c5c",
+      borderRadius: "12px",
+      boxShadow: "0px 10px 100px 0px rgba(0,0,0,0.3)",
+    },
+    "& p": {
+      color: "white",
+      marginBottom: "2px",
     },
   };
 
@@ -75,19 +129,21 @@ const FormReg = () => {
               label="Username"
               value={username}
               error={usernameError}
+              helperText={usernameTextError}
               onChange={(e) => setUsername(e.target.value)}
               required
               sx={textfieldStyling}
               type="text"
-              className="w-full bg-[#5c5c5c] border border-[#555658] shadow-xl text-white font-bold"
+              className="w-full"
             />
             <TextField
               label="Email"
               value={email}
               error={emailError}
+              helperText={emailTextError}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold"
+              className="w-full"
               sx={textfieldStyling}
               type="email"
             />
@@ -95,14 +151,15 @@ const FormReg = () => {
               label="Password"
               value={password}
               error={passwordError}
+              helperText={passwordTextError}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold"
+              className="w-full"
               sx={textfieldStyling}
               type="password"
             />
             <Button
-              className="w-[96px] h-7 bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold rounded-none"
+              className="go-button text-white rounded-xl border-2 border-[#5c5c5c]"
               type="submit"
             >
               Submit

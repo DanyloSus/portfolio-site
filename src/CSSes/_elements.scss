@@ -4,9 +4,7 @@ section {
     > div div {
       @apply text-center justify-center my-20;
     }
-    button {
-      @apply mx-auto;
-    }
+
     img.active {
       @apply h-full w-full object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
     }

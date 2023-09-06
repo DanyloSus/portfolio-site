@@ -17,12 +17,7 @@ const Stack = () => {
           <img src="./rest-api.png" alt="rest api" className="object-cover" />
           <p>Fast API</p>
         </div>
-        <div
-          className="revealT"
-          onClick={() => {
-            window.open("https://t.me/GetBotMedia", "_self");
-          }}
-        >
+        <div className="revealT">
           <img
             src="./telegram-api.png"
             alt="telegram api"
