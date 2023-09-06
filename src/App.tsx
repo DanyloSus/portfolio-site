@@ -68,10 +68,12 @@ const App = () => {
             path="/"
             element={
               <div className="flex flex-col gap-[90px] mt-[90px]">
-                <Element fio="Stramousov Viktor"
+                <Element
+                  fio="Stramousov Viktor"
                   desc="Python Developer"
-                  lin=""
-                  git="https://github.com/Strong-Finger-sudo" />
+                  lin="https://www.linkedin.com/in/виктор-страмоусов-16647828b/"
+                  git="https://github.com/Strong-Finger-sudo"
+                />
                 <Element
                   fio="Danylo Sushko"
                   desc="Front-End Developer"
