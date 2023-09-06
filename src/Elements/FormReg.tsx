@@ -28,21 +28,37 @@ const FormReg = () => {
       setUsernameError(true);
     }
 
-    if (email && password) {
-      console.log(email, password);
+    if (email && password && username) {
+      console.log("POST");
+      fetch("https://wyn70xjevv.loclx.io/auth/reg_users", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({
+          email,
+          password,
+          username,
+        }),
+      });
     }
   };
 
   const textfieldStyling = {
     "& label": {
-      color: "gray",
+      color: "white",
       "&.Mui-focused": {
-        color: "gray",
+        color: "white",
         fontWeight: "700",
       },
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "gray",
+      borderColor: "white",
     },
   };
 
@@ -60,7 +76,7 @@ const FormReg = () => {
               required
               sx={textfieldStyling}
               type="text"
-              className="w-full bg-[#eceeea] border border-[#555658] shadow-xl text-bg-elements font-bold"
+              className="w-full bg-[#aaaaaa] border border-[#555658] shadow-xl text-white font-bold"
             />
             <TextField
               label="Email"
