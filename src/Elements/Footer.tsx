@@ -2,6 +2,7 @@ const Footer = () => {
   return (
     <footer className="flex items-center flex-col gap-3 py-9">
       <h2>Portfolios</h2>
+      <h2>Contacts</h2>
       <div className="flex items-center justify-center gap-[60px] text-center flex-wrap md:gap-[30px] md:px-[30px]">
         <div>
           <h2>Stramousov Viktor</h2>
@@ -12,7 +13,7 @@ const Footer = () => {
           <p>danylo.sushko18@gmail.com</p>
         </div>
       </div>
-      <p className="mt-6">@ Portfolio, {new Date().getFullYear()}.</p>
+      <p className="mt-6">© Portfolio, {new Date().getFullYear()}.</p>
     </footer>
   );
 };
