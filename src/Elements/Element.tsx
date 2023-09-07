@@ -84,7 +84,7 @@ const Element = ({
             <button
               className=""
               onClick={() => {
-                window.open("https://t.me/GetBotMedia", "_self");
+                window.open("https://t.me/ewjhcehfcuief_bot", "_self");
               }}
             >
               About Us
