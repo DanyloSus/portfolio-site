@@ -79,6 +79,7 @@ const App = () => {
                   desc="Front-End Developer"
                   lin="https://www.linkedin.com/in/%D0%B4%D0%B0%D0%BD%D0%B8%D0%BB%D0%BE-%D1%81%D1%83%D1%88%D0%BA%D0%BE-895206289/"
                   git="https://github.com/DanyloSus"
+                  img="photos/ds.jpg"
                 />
                 <Stack />
                 <Footer />

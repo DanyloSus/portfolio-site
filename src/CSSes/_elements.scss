@@ -16,7 +16,7 @@ section {
     }
 
     img.active {
-      @apply max-w-[30%] xl:max-w-[40%] w-full h-full object-cover md:h-[150px] md:object-cover md:max-w-full md:w-full;
+      @apply max-w-[30%] xl:max-w-[40%] w-full h-full object-cover md:h-[150px] md:object-cover md:max-w-full md:w-full object-top;
       @media screen and (min-width: 768px) {
         &.revealI {
           transform-origin: right;
