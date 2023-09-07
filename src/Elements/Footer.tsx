@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="flex items-center justify-center gap-[60px] text-center flex-wrap md:gap-[30px] md:px-[30px]">
         <div>
           <h2>Stramousov Viktor</h2>
-          <p></p>
+          <p>vectorstramousov5@gmail.com</p>
         </div>
         <div>
           <h2>Danylo Sushko</h2>

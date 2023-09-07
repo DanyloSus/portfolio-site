@@ -8,6 +8,16 @@ const FormReg = () => {
   const [data, setData] =
     useState<{ email: string; password: string; username: string }[]>();
 
+  useEffect(() => {
+    getRegData();
+  }, []);
+
+  const getRegData = async () => {
+    fetch("https://wyn70xjevv.loclx.io/auth/get_users")
+      .then((resp) => resp.json())
+      .then((data) => setData(data));
+  };
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -24,6 +34,10 @@ const FormReg = () => {
     setEmailError(false);
     setPasswordError(false);
     setUsernameError(false);
+
+    setEmailTextError("");
+    setPasswordTextError("");
+    setUsernameTextError("");
 
     const checkEmail = (email: string) => {
       if (data) {
@@ -55,7 +69,7 @@ const FormReg = () => {
       setUsernameTextError("Username is already registered");
     }
 
-    if (email && password && username) {
+    if (!emailTextError && !passwordTextError && !usernameTextError) {
       console.log("POST");
       fetch("https://wyn70xjevv.loclx.io/auth/reg_users", {
         method: "POST",
@@ -74,16 +88,6 @@ const FormReg = () => {
         }),
       });
     }
-  };
-
-  useEffect(() => {
-    getRegData();
-  }, []);
-
-  const getRegData = async () => {
-    fetch("https://wyn70xjevv.loclx.io/auth/get_users")
-      .then((resp) => resp.json())
-      .then((data) => setData(data));
   };
 
   const textfieldStyling = {
