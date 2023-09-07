@@ -67,46 +67,22 @@ header > div {
   }
 }
 
-@media screen and (min-width: 540px) {
-  .revealT {
-    transform: translateY(-150px);
-    opacity: 0;
-    transition: 1s all ease-in-out;
-    &.active {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    &:nth-child(2n) {
-      transform: translateY(150px);
-      opacity: 0;
-      transition: 1s all ease-in-out;
-
-      &.active {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
+.revealT {
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
   }
-}
-
-@media screen and (max-width: 540px) {
-  .revealT {
-    transform: translateX(-150px);
+  &:nth-child(2n) {
+    transform: translateX(150px);
     opacity: 0;
     transition: 1s all ease-in-out;
+
     &.active {
       transform: translateX(0);
       opacity: 1;
-    }
-    &:nth-child(2n) {
-      transform: translateX(150px);
-      opacity: 0;
-      transition: 1s all ease-in-out;
-
-      &.active {
-        transform: translateX(0);
-        opacity: 1;
-      }
     }
   }
 }

@@ -6,7 +6,9 @@ import { FormControl } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 
-const FormReg = () => {
+const FormLog = () => {
+  const [data, setData] = useState<string[] | { detail: string }>();
+
   const dispatch = useDispatch();
 
   const useOnReg = (username: string) => {
@@ -14,17 +16,12 @@ const FormReg = () => {
     window.location.href = "/";
   };
 
-  const [data, setData] = useState<{ detail: string }>({ detail: "" });
-
   const [isCheck, setIsCheck] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [usernameError, setUsernameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [usernameTextError, setUsernameTextError] = useState("");
   const [emailTextError, setEmailTextError] = useState("");
   const [passwordTextError, setPasswordTextError] = useState("");
 
@@ -33,15 +30,20 @@ const FormReg = () => {
 
     setEmailError(false);
     setPasswordError(false);
-    setUsernameError(false);
 
     setEmailTextError("");
     setPasswordTextError("");
-    setUsernameTextError("");
 
     if (email == "") {
       setEmailError(true);
       setEmailTextError("Enter email");
+    }
+    if (!Array.isArray(data)) {
+      if (data?.detail) {
+        setEmailError(true);
+        setPasswordError(true);
+        setEmailTextError("You are wrong");
+      }
     }
     if (password == "") {
       setPasswordError(true);
@@ -50,25 +52,11 @@ const FormReg = () => {
       setPasswordError(true);
       setPasswordTextError("Enter a longer password");
     }
-    if (username == "") {
-      setUsernameError(true);
-      setUsernameTextError("Enter username");
-    }
-    if (data?.detail) {
-      setUsernameError(true);
-      setEmailError(true);
-      setUsernameTextError("User is already exist");
-    }
 
-    if (
-      !usernameError &&
-      !passwordError &&
-      !emailError &&
-      password.length >= 8
-    ) {
-      console.log(usernameError, passwordError, emailError);
+    if (!passwordError && password.length >= 8) {
       setIsCheck(true);
-      fetch("https://portfolio-site-378x.onrender.com/auth/reg_users", {
+      console.log(passwordError, emailError);
+      fetch("https://portfolio-site-378x.onrender.com/auth/get_users", {
         method: "POST",
         mode: "cors",
         cache: "no-cache",
@@ -81,13 +69,12 @@ const FormReg = () => {
         body: JSON.stringify({
           email,
           password,
-          username,
         }),
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data === null) {
-            useOnReg(username);
+          if (Array.isArray(data)) {
+            useOnReg(data[0]);
             console.log("null");
           } else {
             setData(data);
@@ -136,7 +123,7 @@ const FormReg = () => {
 
   return (
     <div className="w-screen h-[calc(100vh-56px)] bg-bg-body px-11 md:px-5 flex items-center justify-center py-11">
-      <div className="max-w-[60%] w-full h-full object-cover md:h-[90%] md:object-cover md:max-w-full md:w-full bg-bg-elements overflow-y-auto">
+      <div className="max-w-[60%] w-full h-full object-cover md:h-[70%] md:object-cover md:max-w-full md:w-full bg-bg-elements">
         {isCheck ? (
           <div className="flex h-full w-full items-center justify-center">
             <img src="./load.gif" />
@@ -144,27 +131,19 @@ const FormReg = () => {
         ) : (
           <form onSubmit={handleSubmit} className="h-full">
             <FormControl className="flex items-center justify-center h-full text-white gap-5 px-5">
-              <h2 className="text-3xl md:text-2xl">Registration</h2>
-              <TextField
-                label="Username"
-                value={username}
-                error={data.detail ? true : usernameError ? true : false}
-                helperText={usernameTextError}
-                onChange={(e) => {
-                  setUsername(e.target.value);
-                  setUsernameError(false);
-                  setUsernameTextError("");
-                  setData({ detail: "" });
-                }}
-                required
-                sx={textfieldStyling}
-                type="text"
-                className="w-full"
-              />
+              <h2 className="text-3xl md:text-2xl">Login</h2>
               <TextField
                 label="Email"
                 value={email}
-                error={data.detail ? true : emailError ? true : false}
+                error={
+                  data
+                    ? Array.isArray(data)
+                      ? false
+                      : emailError
+                      ? true
+                      : false
+                    : false
+                }
                 helperText={emailTextError}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -180,13 +159,21 @@ const FormReg = () => {
               <TextField
                 label="Password"
                 value={password}
-                error={passwordError}
+                error={
+                  data
+                    ? Array.isArray(data)
+                      ? false
+                      : passwordError
+                      ? true
+                      : false
+                    : false
+                }
                 helperText={passwordTextError}
                 onChange={(e) => {
                   setPassword(e.target.value);
                   setPasswordError(false);
-                  setPasswordTextError("");
                   setData({ detail: "" });
+                  setPasswordTextError("");
                 }}
                 required
                 className="w-full"
@@ -207,4 +194,4 @@ const FormReg = () => {
   );
 };
 
-export default FormReg;
+export default FormLog;

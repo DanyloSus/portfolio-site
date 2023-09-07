@@ -1,0 +1,7 @@
+.popover {
+  @apply w-full;
+}
+.MuiPaper-root,
+.MuiPaper-root > * {
+  @apply bg-transparent;
+}

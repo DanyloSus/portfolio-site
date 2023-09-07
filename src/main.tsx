@@ -5,8 +5,13 @@ import App from "./App.tsx";
 
 import "./CSSes/index.css";
 
+import { Provider } from "react-redux";
+import { store } from "./store.tsx";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );

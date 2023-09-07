@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Element from "./Elements/Element";
 import Footer from "./Elements/Footer";
@@ -7,10 +7,9 @@ import Stack from "./Elements/Stack";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import FormReg from "./Elements/FormReg";
+import FormLog from "./Elements/FormLog";
 
 const App = () => {
-  const [data, setData] = useState();
-
   const reveal = () => {
     const reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
@@ -47,18 +46,6 @@ const App = () => {
     reveal();
   }, []);
 
-  useEffect(() => {
-    handleChange();
-  }, []);
-
-  const handleChange = async () => {
-    fetch("https://wyn70xjevv.loclx.io/botmedia/get_bot_link")
-      .then((resp) => resp.json())
-      .then((data) => setData(data));
-  };
-
-  console.log(data);
-
   return (
     <Router>
       <main className="overflow-x-hidden bg-bg-body text-white">
@@ -72,6 +59,7 @@ const App = () => {
                   fio="Stramousov Viktor"
                   desc="Python Developer"
                   lin="https://www.linkedin.com/in/виктор-страмоусов-16647828b/"
+                  img="photos/vs.jpg"
                   git="https://github.com/Strong-Finger-sudo"
                 />
                 <Element
@@ -87,6 +75,7 @@ const App = () => {
             }
           />
           <Route path="/registration" element={<FormReg />} />
+          <Route path="/login" element={<FormLog />} />
         </Routes>
       </main>
     </Router>

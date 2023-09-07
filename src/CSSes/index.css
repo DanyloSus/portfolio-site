@@ -152,46 +152,34 @@ header > div {
     transform: scaleX(1);
   }
 }
-@media screen and (min-width: 540px) {
-  .revealT {
-    transform: translateY(-150px);
-    opacity: 0;
-    transition: 1s all ease-in-out;
-  }
-  .revealT.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  .revealT:nth-child(2n) {
-    transform: translateY(150px);
-    opacity: 0;
-    transition: 1s all ease-in-out;
-  }
-  .revealT:nth-child(2n).active {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.revealT {
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: 1s all ease-in-out;
 }
-@media screen and (max-width: 540px) {
-  .revealT {
-    transform: translateX(-150px);
-    opacity: 0;
-    transition: 1s all ease-in-out;
-  }
-  .revealT.active {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  .revealT:nth-child(2n) {
-    transform: translateX(150px);
-    opacity: 0;
-    transition: 1s all ease-in-out;
-  }
-  .revealT:nth-child(2n).active {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.revealT.active {
+  transform: translateX(0);
+  opacity: 1;
 }
+.revealT:nth-child(2n) {
+  transform: translateX(150px);
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.revealT:nth-child(2n).active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .MuiFormLabel-root {
   color: white;
+}
+
+.popover {
+  @apply w-full;
+}
+
+.MuiPaper-root,
+.MuiPaper-root > * {
+  @apply bg-transparent;
 }/*# sourceMappingURL=index.css.map */
