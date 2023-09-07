@@ -11,7 +11,8 @@ const userSlice = createSlice({
       localStorage.setItem("user", action.payload.username);
     },
     quit(state, action) {
-      console.log("quit");
+      const some = action;
+      console.log("quit", some);
       state.username = "";
       localStorage.removeItem("user");
     },
