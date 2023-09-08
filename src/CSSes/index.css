@@ -55,7 +55,7 @@ section:nth-child(2n+1) > div > div div {
   @apply text-center justify-center items-center my-20;
 }
 section:nth-child(2n+1) > div img.active {
-  @apply h-full max-w-[40%] xl:w-full xl:max-w-full object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
+  @apply h-full xl:w-full max-w-[45%] object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
 }
 section:nth-child(2n) > div {
   @apply max-w-full flex w-full flex-row-reverse h-[360px] text-left gap-3 md:flex-col md:max-h-[600px] md:h-full;
@@ -65,16 +65,6 @@ section:nth-child(2n) > div > div div {
 }
 section:nth-child(2n) > div img.active {
   @apply max-w-[30%] xl:max-w-[40%] w-full h-full object-cover md:h-[150px] md:object-cover md:max-w-full md:w-full object-top;
-}
-@media screen and (min-width: 768px) {
-  section:nth-child(2n) > div img.active.revealI {
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: 1s all ease-in-out;
-  }
-  section:nth-child(2n) > div img.active.revealI.active {
-    transform: scaleX(1);
-  }
 }
 
 #stack > div > div {

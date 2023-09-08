@@ -16,27 +16,14 @@ const Element = ({
   img = "react.png",
 }: ElementProps) => {
   const handleDownload = () => {
-    const file1Url = "./resume/RezumeStramousovViktor.docx";
-    const file2Url = "./resume/RezumeStramousovViktorcopy.docx";
+    var downloadLink = document.createElement("a");
+    downloadLink.href = "./resume.rar";
+    downloadLink.download = "resume.rar";
 
-    const link1 = document.createElement("a");
-    link1.href = file1Url;
-    link1.download = "file1.pdf";
-    link1.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
 
-    const link2 = document.createElement("a");
-    link2.href = file2Url;
-    link2.download = "file2.zip";
-    link2.style.display = "none";
-
-    document.body.appendChild(link1);
-    document.body.appendChild(link2);
-
-    link1.click();
-    link2.click();
-
-    document.body.removeChild(link1);
-    document.body.removeChild(link2);
+    document.body.removeChild(downloadLink);
   };
 
   const reveal = () => {
