@@ -55,7 +55,7 @@ section:nth-child(2n+1) > div > div div {
   @apply text-center justify-center items-center my-20;
 }
 section:nth-child(2n+1) > div img.active {
-  @apply h-full xl:w-full max-w-[45%] object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
+  @apply h-full xl:w-full max-w-[35%] object-cover md:h-[200px] md:object-cover md:max-w-full md:w-full;
 }
 section:nth-child(2n) > div {
   @apply max-w-full flex w-full flex-row-reverse h-[360px] text-left gap-3 md:flex-col md:max-h-[600px] md:h-full;
